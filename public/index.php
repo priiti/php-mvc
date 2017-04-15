@@ -10,6 +10,9 @@
     echo get_class($router);
  */
 
+// Change the time of the cookie lifetime
+// ini_set('session.cookie_lifetime', 864000); // Ten days period
+
 // Require controller class
 //require('../App/Controllers/Posts.php');
 
@@ -50,7 +53,7 @@ $router->addNewRoute('', ['controller' => 'Home', 'action' => 'index']);
 $router->addNewRoute('login', ['controller' => 'Login', 'action' => 'new']);
 $router->addNewRoute('logout', ['controller' => 'Login', 'action' => 'logout']);
 $router->addNewRoute('signup', ['controller' => 'Signup', 'action' => 'signup']);
-$router->addNewRoute('profile', ['controller' => 'Profile', 'action' => 'profile']);
+$router->addNewRoute('profile', ['controller' => 'Account', 'action' => 'profile']);
 $router->addNewRoute('{controller}/{action}');
 $router->addNewRoute('{controller}/{action}/{id:\d+}');
 $router->addNewRoute('admin/{controller}/{action}', ['namespace' => 'Admin']);

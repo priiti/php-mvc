@@ -12,7 +12,6 @@ class Home extends \Core\Controller {
     protected function after() {}
 
     public function indexAction() {
-
         View::renderTemplate('Home/index.html.twig', []);
     }
 }

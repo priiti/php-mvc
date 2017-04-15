@@ -14,10 +14,3 @@ body {
     background-color: #F5F5F5;
     color: black;
 }
-
-/* Posts */
-#bootstrap-override .posts {
-    text-decoration: none;
-    color: black;
-
-}
