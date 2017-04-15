@@ -15,7 +15,6 @@ class Login extends \Core\Controller {
         $user = User::authenticate($_POST['email'], $_POST['pwd']);
 
         if ($user) {
-
             Auth::login($user);
 
             // echo $_SESSION['user_id'];

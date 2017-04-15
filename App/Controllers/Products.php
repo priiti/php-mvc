@@ -9,9 +9,7 @@ use App\Auth;
 class Products extends \Core\Controller {
     public function indexAction() {
 
-        if (!Auth::isLoggedIn()) {
-            $this->redirect('/login');
-        }
+        $this->requireLogin();
 
         $products = Product::getAllProducts();
 

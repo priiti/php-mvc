@@ -10,10 +10,7 @@ class Posts extends \Core\Controller {
     public function indexAction() {
         // echo 'Hello from the index action in the Posts controller.';
 
-        if (!Auth::isLoggedIn()) {
-            Auth::setSessionUserRequestedPage();
-            $this->redirect('/login');
-        }
+        $this->requireLogin();
 
         $posts = Post::getAll();
 
