@@ -50,6 +50,7 @@ $router->addNewRoute('', ['controller' => 'Home', 'action' => 'index']);
 $router->addNewRoute('login', ['controller' => 'Login', 'action' => 'new']);
 $router->addNewRoute('logout', ['controller' => 'Login', 'action' => 'logout']);
 $router->addNewRoute('signup', ['controller' => 'Signup', 'action' => 'signup']);
+$router->addNewRoute('profile', ['controller' => 'Profile', 'action' => 'profile']);
 $router->addNewRoute('{controller}/{action}');
 $router->addNewRoute('{controller}/{action}/{id:\d+}');
 $router->addNewRoute('admin/{controller}/{action}', ['namespace' => 'Admin']);

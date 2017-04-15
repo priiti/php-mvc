@@ -10,7 +10,7 @@ class Post extends \Core\Model {
 
         try {
             $database = static::getDatabaseConnection();
-            $statement = $database->query("
+            $statement = $database->prepare("
                 SELECT 
                 p.id, 
                 p.title, 
@@ -19,6 +19,7 @@ class Post extends \Core\Model {
                 FROM posts p
                 ORDER BY p.create_date DESC;
             ");
+            $statement->execute();
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             return $results;
 

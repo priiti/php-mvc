@@ -2,6 +2,7 @@
 
 namespace Core;
 use App\Auth;
+use App\Flash;
 
 abstract class Controller {
 
@@ -41,8 +42,15 @@ abstract class Controller {
     }
 
     public function requireLogin() {
-        if (!Auth::isLoggedIn()) {
+        if (!Auth::getUser()) {
+
+            // Set message to user to log-in first
+            Flash::addMessage('Lehe sisu nägemiseks palume sisse logida.', Flash::INFO);
+
+            // Save user requested url into $_SESSION
             Auth::setSessionUserRequestedPage();
+
+            // Redirect into login page
             $this->redirect('/login');
         }
     }

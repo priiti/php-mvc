@@ -3,9 +3,9 @@
 {% block title %}Avaleht{% endblock %}
 
 {% block body %}
-    {% if is_logged_in %}
+    {% if current_user %}
 
-        <h1>Tere tulemast!</h1>
+        <h1>Tere tulemast, {{ current_user.firstname }}!</h1>
 
     {% else %}
 

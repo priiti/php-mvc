@@ -4,13 +4,10 @@ namespace App\Controllers;
 
 use \Core\View;
 use App\Models\Post;
-use App\Auth;
 
-class Posts extends \Core\Controller {
+class Posts extends Authenticated {
+
     public function indexAction() {
-        // echo 'Hello from the index action in the Posts controller.';
-
-        $this->requireLogin();
 
         $posts = Post::getAll();
 

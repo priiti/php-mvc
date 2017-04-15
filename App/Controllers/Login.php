@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Auth;
+use App\Flash;
 use Core\View;
 use App\Models\User;
 
@@ -21,6 +22,7 @@ class Login extends \Core\Controller {
 
             $this->redirect(Auth::getSessionUserRequestedPage());
         } else {
+            Flash::addMessage('Sisselogimine ebaõnnestus. Palun proovi uuesti.', Flash::WARNING);
             View::renderTemplate('Login/login.html.twig', [
                 'email' => $_POST['email']
             ]);
@@ -29,6 +31,12 @@ class Login extends \Core\Controller {
 
     public function logoutAction() {
         Auth::logout();
+
+        $this->redirect('/login/show-logout-message');
+    }
+
+    public function showLogoutMessageAction() {
+        Flash::addMessage('Väljalogimine õnnestus.', Flash::SUCCESS);
 
         $this->redirect('/');
     }

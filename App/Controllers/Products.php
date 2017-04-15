@@ -4,12 +4,10 @@ namespace App\Controllers;
 
 use \Core\View;
 use App\Models\Product;
-use App\Auth;
 
-class Products extends \Core\Controller {
+class Products extends Authenticated {
     public function indexAction() {
 
-        $this->requireLogin();
 
         $products = Product::getAllProducts();
 

@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Models\User;
+
 class Auth {
     public static function login($user) {
         session_regenerate_id(true);
@@ -33,14 +35,18 @@ class Auth {
         session_destroy();
     }
 
-    public static function isLoggedIn() {
-        return isset($_SESSION['user_id']);
-    }
-
     public static function setSessionUserRequestedPage() {
         $_SESSION['return_to'] = $_SERVER['REQUEST_URI'];
     }
 
+    // Get current logged- in user data according to user_id from the $_SESSION
+    public static function getUser() {
+        if (isset($_SESSION['user_id'])) {
+            return User::findUserById($_SESSION['user_id']);
+        }
+    }
+
+    // Returns the $_SESSION return_to page, user has requested while not logged- in
     public static function getSessionUserRequestedPage() {
         // If the page is not saved into session, we redirect into homepage
         return $_SESSION['return_to'] ?? '/';
