@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Avaleht{% endblock %}
+
+{% block body %}
+    {% if is_logged_in %}
+
+        <h1>Tere tulemast!</h1>
+
+    {% else %}
+
+        <a href="/login">Logi sisse</a> või <a href="/signup">Registreeru</a>
+
+    {% endif %}
+
+{% endblock %}

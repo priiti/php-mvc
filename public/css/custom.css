@@ -1,0 +1,24 @@
+/* Page font */
+body {
+    font-family: 'PT Serif', serif;
+}
+
+/* NAV */
+.navbar-default {
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #F5F5F5;
+    color: black;
+}
+
+/* Posts */
+#bootstrap-override .posts {
+    text-decoration: none;
+    color: black;
+
+}
+

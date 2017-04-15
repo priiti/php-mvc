@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Logi sisse{% endblock %}
+
+{% block body %}
+    <div class="col-md-6">
+        <h1>Logi sisse</h1>
+        <form action="/login/login" method="post">
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="E-mail" autofocus value="{{ email }}">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Parool:</label>
+                <input type="password" name="pwd" class="form-control" id="pwd" placeholder="Parool">
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input class="rememberUserCheckbox" type="checkbox">Jäta kasutaja meelde
+                </label>
+            </div>
+            <button type="submit" class="btn btn-default">Sisene</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+{% endblock %}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Bootstrap -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body id="bootstrap-override">
+<nav class="navbar navbar-static-top navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Avaleht</a>
+        </div>
+        {% if is_logged_in %}
+        <ul class="nav navbar-nav">
+            <li class="navbar-button"><a href="/posts/index">Postitused</a></li>
+            <li class="navbar-button"><a href="/products/index">Tooted</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="navbar-button"><a href="/logout">Logi välja</a></li>
+        </ul>
+        {% endif %}
+    </div>
+</nav>
+
+<div class="col-md-1"></div>
+
+<div class="col-md-10">
+    {% block body %}
+    {% endblock %}
+</div>
+
+<div class="col-md-1"></div>
+
+{#<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>#}
+{#<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>#}
+{#{% block footer %}#}
+{#{% endblock %}#}
+{# Footer implementation TODO #}
+<script src="/js/App.js"></script>
+</body>
+</html>
