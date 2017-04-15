@@ -90,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Core/Controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="32" />
+            <state relative-caret-position="45">
+              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -110,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Posts.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Posts.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App/Controllers/Posts.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="30" />
+              <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
               <folding>
                 <element signature="e#35#50#0#PHP" expanded="true" />
               </folding>
@@ -137,8 +137,8 @@
       <file leaf-file-name="Auth.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Auth.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="26" column="34" lean-forward="true" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+            <state relative-caret-position="348">
+              <caret line="32" column="26" lean-forward="true" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -690,12 +690,12 @@
       <workItem from="1490959346646" duration="3710000" />
       <workItem from="1491033269658" duration="1095000" />
       <workItem from="1491038941170" duration="12960000" />
-      <workItem from="1492016697583" duration="32600000" />
+      <workItem from="1492016697583" duration="33001000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95351000" />
+    <option name="totallyTimeSpent" value="95752000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1041,22 +1041,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/App/Auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="32" column="26" lean-forward="true" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/App/Controllers/Login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
           <folding>
             <element signature="e#35#48#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Controllers/Posts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="30" />
-          <folding>
-            <element signature="e#35#50#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1071,19 +1069,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Auth.php">
+    <entry file="file://$PROJECT_DIR$/Core/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="26" column="34" lean-forward="true" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+        <state relative-caret-position="45">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Core/Controller.php">
+    <entry file="file://$PROJECT_DIR$/App/Controllers/Posts.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="32" />
-          <folding />
+        <state relative-caret-position="180">
+          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding>
+            <element signature="e#35#50#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
