@@ -4,9 +4,15 @@ namespace App\Controllers;
 
 use \Core\View;
 use App\Models\Product;
+use App\Auth;
 
 class Products extends \Core\Controller {
     public function indexAction() {
+
+        if (!Auth::isLoggedIn()) {
+            $this->redirect('/login');
+        }
+
         $products = Product::getAllProducts();
 
         View::renderTemplate('Products/index.html.twig', [

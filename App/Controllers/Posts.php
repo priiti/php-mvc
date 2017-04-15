@@ -4,10 +4,16 @@ namespace App\Controllers;
 
 use \Core\View;
 use App\Models\Post;
+use App\Auth;
 
 class Posts extends \Core\Controller {
     public function indexAction() {
         // echo 'Hello from the index action in the Posts controller.';
+
+        if (!Auth::isLoggedIn()) {
+            Auth::setSessionUserRequestedPage();
+            $this->redirect('/login');
+        }
 
         $posts = Post::getAll();
 

@@ -20,7 +20,7 @@ class Login extends \Core\Controller {
 
             // echo $_SESSION['user_id'];
 
-            $this->redirect('/');
+            $this->redirect(Auth::getSessionUserRequestedPage());
         } else {
             View::renderTemplate('Login/login.html.twig', [
                 'email' => $_POST['email']
