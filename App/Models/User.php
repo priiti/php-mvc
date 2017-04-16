@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Auth;
 use App\Token;
 use PDO;
 
@@ -117,8 +118,9 @@ class User extends \Core\Model {
     public function rememberLogin() {
         $token = new Token();
         $hashed_token = $token->getHash();
+        $this->remember_token = $token->getValue();
 
-        $expiry_timestamp = time() + 60 * 60 * 24 * 30; // 30 days
+        $this->expiry_timestamp = time() + 60 * 60 * 24 * 30;
 
         $sql = 'INSERT INTO AC_SAVED_LOGINS (token_hash, user_id, expires_at)
                 VALUES (:token_hash, :user_id, :expires_at)';
@@ -127,7 +129,7 @@ class User extends \Core\Model {
 
         $stmt->bindValue(':token_hash', $hashed_token, PDO::PARAM_STR);
         $stmt->bindValue(':user_id', $this->user_id, PDO::PARAM_INT);
-        $stmt->bindValue(':expires_at', date('Y-m-d H:i:s', $expiry_timestamp), PDO::PARAM_STR);
+        $stmt->bindValue(':expires_at', date('Y-m-d H:i:s', $this->expiry_timestamp), PDO::PARAM_STR);
 
         return $stmt->execute();
     }
