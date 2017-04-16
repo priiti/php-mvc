@@ -8,15 +8,15 @@
         <form action="/login/login" method="post">
             <div class="form-group">
                 <label for="email">E-mail:</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="E-mail" autofocus value="{{ email }}">
+                <input type="email" name="email" class="form-control" id="email" placeholder="E-mail" autofocus value="{{ email }}" />
             </div>
             <div class="form-group">
                 <label for="pwd">Parool:</label>
-                <input type="password" name="pwd" class="form-control" id="pwd" placeholder="Parool">
+                <input type="password" name="pwd" class="form-control" id="pwd" placeholder="Parool" />
             </div>
             <div class="checkbox">
                 <label>
-                    <input class="rememberUserCheckbox" type="checkbox">Jäta kasutaja meelde
+                    <input class="rememberUserCheckbox" type="checkbox" name="remember_me" {% if remember_me %} checked="checked" {% endif %}/>Jäta kasutaja meelde
                 </label>
             </div>
             <button type="submit" class="btn btn-default">Sisene</button>
