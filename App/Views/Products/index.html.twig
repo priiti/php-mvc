@@ -34,6 +34,8 @@
 
         {% endif %}
 
-    <button class="btn btn-default" onclick="location.href='/products/add'">Lisa uus toode</button>
+        {% if current_user.add_product %}
+            <button class="btn btn-default" onclick="location.href='/products/add'">Lisa uus toode</button>
+        {% endif %}
 
 {% endblock %}

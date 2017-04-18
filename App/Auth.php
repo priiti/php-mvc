@@ -3,7 +3,6 @@
 namespace App;
 
 use App\Models\RememberedLogin;
-use App\Models\SavedLogin;
 use App\Models\User;
 
 class Auth {
@@ -88,6 +87,4 @@ class Auth {
             setcookie('remember_me', '', time() - 3600); // set to expire in the past
         }
     }
-
-
 }

@@ -21,7 +21,7 @@ class Products extends Authenticated {
 
     public function addAction() {
         View::renderTemplate('Products/add.html.twig', [
-//            'users' => $users = User::getAll()
+            'users' => $users = User::getAll(1)
         ]);
     }
 

@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Kasutajad{% endblock %}
+
+{% block body %}
+
+    <h1>Kasutajate listing</h1>
+    <br>
+
+    {% if current_user.is_admin %}
+        <button class="btn btn-default">Muuda kasutajate andmeid</button>
+        <br>
+        <br>
+    {% endif %}
+
+    <div class="col-md-6">
+    {% for user in users %}
+
+        <ul class="list-group">
+
+            <li class="list-group-item list-group-item-success"><strong>{{ user.full_name }}</strong></li>
+            <li class="list-group-item"><strong>Kasutaja ID: </strong>{{ user.user_id }}</li>
+            <li class="list-group-item"><strong>Eesnimi: </strong>{{ user.firstname }}</li>
+            <li class="list-group-item"><strong>Perenimi: </strong>{{ user.lastname }}</li>
+            <li class="list-group-item"><strong>E-mail: </strong>{{ user.user_email }}</li>
+            <li class="list-group-item"><strong>Rollid: </strong>...</li>
+            <li class="list-group-item"><strong>Loodud: </strong>{{ user.createdate | date("d.m.Y") }}</li>
+
+        </ul>
+    {% endfor %}
+
+    </div>
+
+    <div class="col-md-6"></div>
+
+{% endblock %}

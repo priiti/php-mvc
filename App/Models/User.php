@@ -22,12 +22,16 @@ class User extends \Core\Model {
         $database = static::getDatabaseConnection();
 
         $sql = "SELECT 
-                CONCAT(users.firstname, ' ', users.lastname) owner_name, 
-                users.user_id
-                FROM users ";
+                CONCAT(users.firstname, ' ', users.lastname) full_name, 
+                users.user_id, users.user_email, 
+                users.firstname, users.lastname, users.createdate,
+                ur.is_admin, ur.add_post, ur.add_product
+                FROM users
+                INNER JOIN AC_USER_RIGHTS UR
+                ON ur.user_id=users.user_id";
 
         if ($id) {
-            $sql .= "WHERE users.user_id != :user_id";
+            $sql .= " WHERE users.user_id NOT IN(:user_id, 1)";
 
             $stmt = $database->prepare($sql);
 
@@ -123,7 +127,11 @@ class User extends \Core\Model {
 
     // Getting the user by id
     public static function findUserById($id) {
-        $sql = 'SELECT * FROM users WHERE user_id = :id';
+        $sql = 'SELECT * FROM users 
+                INNER JOIN AC_USER_RIGHTS UR
+                ON ur.user_id=users.user_id
+                WHERE users.user_id = :id';
+
         $db = static::getDatabaseConnection();
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);

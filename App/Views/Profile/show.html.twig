@@ -10,9 +10,11 @@
             <li class="list-group-item"><strong>Eesnimi: </strong><br>{{ user.firstname }}</li>
             <li class="list-group-item"><strong>Perenimi: </strong><br>{{ user.lastname }}</li>
         </ul>
-        <form action="/profile/edit" method="post">
-            <button class="btn btn-default">Muuda kasutaja andmeid</button>
-        </form>
+        {% if current_user.is_admin %}
+            <form action="/profile/edit" method="post">
+                <button class="btn btn-default">Muuda kasutaja andmeid</button>
+            </form>
+        {% endif %}
     </div>
     <div class="col-md-6"></div>
 {% endblock %}
