@@ -2,12 +2,11 @@
 
 namespace App\Controllers\Admin;
 
-class Users extends \Core\Controller {
+use App\Controllers\Authenticated;
+
+class Users extends Authenticated {
 
 
-    protected function before() {
-        // make sure admin is logged in
-    }
 
     public function indexAction() {
         echo 'User admin index';

@@ -53,7 +53,7 @@ $router->addNewRoute('', ['controller' => 'Home', 'action' => 'index']);
 $router->addNewRoute('login', ['controller' => 'Login', 'action' => 'new']);
 $router->addNewRoute('logout', ['controller' => 'Login', 'action' => 'logout']);
 $router->addNewRoute('signup', ['controller' => 'Signup', 'action' => 'signup']);
-$router->addNewRoute('account', ['controller' => 'Account', 'action' => 'profile']);
+//$router->addNewRoute('profile', ['controller' => 'Profile', 'action' => 'show']);
 $router->addNewRoute('{controller}/{action}');
 $router->addNewRoute('{controller}/{action}/{id:\d+}');
 $router->addNewRoute('admin/{controller}/{action}', ['namespace' => 'Admin']);

@@ -17,7 +17,7 @@ class Config {
     const DATABASE_PASSWORD = 'root';
 
     // Show or hide error messages on screen
-    const SHOW_ERRORS = true;
+    const SHOW_ERRORS = false;
 
     const SECRET_KEY = 't9AuR81fVYSZQjo5Xu6Hg0dx65fT5bbI';
 }

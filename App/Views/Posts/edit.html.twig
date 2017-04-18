@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Postituse muutmine{% endblock %}
+
+{% block body %}
+
+    <h1>Postituse muutmine</h1>
+
+    <form action="/posts/save/{{ post.id }}" method="post" id="formPostEdit">
+
+        <div class="form-group form-group-lg">
+            <label class="control-label" for="post_title">Pealkiri</label>
+            <input name="post_title" class="form-control" type="text" id="post_title" placeholder="Postituse pealkiri" value="{{ post.title }}"/>
+        </div>
+        <div class="form-group">
+            <label for="post_id"></label>
+            <input class="form-control" name="post_id" type="hidden" id="post_id" value="{{ post.id }}" />
+        </div>
+        <div class="form-group">
+            <label for="post_content">Sisu</label>
+            <textarea class="form-control" rows="10" name="post_content" id="post_content">{{ post.content }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Salvesta</button>
+    </form>
+    <br>
+    <button class="btn btn-default" onclick="location.href='/posts/index'">Tagasi</button>
+
+{% endblock %}

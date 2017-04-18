@@ -69,7 +69,7 @@ class Router {
         if ($this->match($url)) {
             $controller = $this->parameters['controller'];
             $controller = $this->convertToStudlyCaps($controller);
-            //$controller = "App\Controllers\\$controller";
+            //$controller = "App\Controllers\$controller";
             $controller = $this->getNamespace() . $controller;
 
             if (class_exists($controller)) {

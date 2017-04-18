@@ -9,7 +9,7 @@ function hide() {
     passwordInput.setAttribute('type', 'password');
 }
 
-var pwdShown = 0;
+let pwdShown = 0;
 
 if (document.querySelector('.showPwdCheckbox') !== null) {
     document.querySelector('.showPwdCheckbox').addEventListener('click', function () {
@@ -22,5 +22,3 @@ if (document.querySelector('.showPwdCheckbox') !== null) {
         }
     });
 }
-
-let a = 0;

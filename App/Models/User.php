@@ -10,24 +10,37 @@ class User extends \Core\Model {
 
     public $errors = [];
 
+    // User properties from array
     public function __construct($data = []) {
         foreach ($data as $key => $value) {
             $this->$key = $value;
         }
     }
 
-    /**
-     * Get all users from db as an array
-     * @return array
-     */
-    public static function getAll() {
-        $db = static::getDatabaseConnection();
-        $stmt = $db->query(
-            'SELECT user_id, firstname, lastname FROM users'
-        );
+    // Get all users from db as an array (exclude with id nr.)
+    public static function getAll($id = null) {
+        $database = static::getDatabaseConnection();
+
+        $sql = "SELECT 
+                CONCAT(users.firstname, ' ', users.lastname) owner_name, 
+                users.user_id
+                FROM users ";
+
+        if ($id) {
+            $sql .= "WHERE users.user_id != :user_id";
+
+            $stmt = $database->prepare($sql);
+
+            $stmt->bindValue(':user_id', $id, PDO::PARAM_INT);
+        } else {
+            $stmt = $database->prepare($sql);
+        }
+        $stmt->execute();
+
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    // Register / save new user into database
     public function save() {
         $this->validate();
 
@@ -50,6 +63,7 @@ class User extends \Core\Model {
         return false;
     }
 
+    // Validate if signup form data was correct
     public function validate() {
         // Firstname
         if ($this->firstname == '') {
@@ -68,7 +82,7 @@ class User extends \Core\Model {
         }
         // Password
         if (strlen($this->pwd) < 6) {
-            $this->errors[] = 'Palun sisesta vähemalt 6 tähemärki';
+            $this->errors[] = 'Parool peab sisaldama vähemalt 6 tähemärki';
         }
         if (preg_match('/.*[a-z]+.*/i', $this->pwd) == 0) {
             $this->errors[] = 'Parool peab sisaldama vähemalt ühte tähte';
@@ -78,10 +92,12 @@ class User extends \Core\Model {
         }
     }
 
+    // Checks email existance
     public static function emailExists($email) {
         return static::findUserByEmail($email) !== false;
     }
 
+    // Getting the user by email
     public static function findUserByEmail($email) {
         $sql = 'SELECT * FROM users WHERE user_email = :email';
         $db = static::getDatabaseConnection();
@@ -93,6 +109,7 @@ class User extends \Core\Model {
         return $stmt->fetch();
     }
 
+    // Authenticates user by email and password_hash -> password_verify
     public static function authenticate($email, $password) {
         $user = static::findUserByEmail($email);
 
@@ -104,6 +121,7 @@ class User extends \Core\Model {
         return false;
     }
 
+    // Getting the user by id
     public static function findUserById($id) {
         $sql = 'SELECT * FROM users WHERE user_id = :id';
         $db = static::getDatabaseConnection();
@@ -115,6 +133,7 @@ class User extends \Core\Model {
         return $stmt->fetch();
     }
 
+    // Save hashed cookie value into database for 'Remember login' possibility
     public function rememberLogin() {
         $token = new Token();
         $hashed_token = $token->getHash();
@@ -132,5 +151,41 @@ class User extends \Core\Model {
         $stmt->bindValue(':expires_at', date('Y-m-d H:i:s', $this->expiry_timestamp), PDO::PARAM_STR);
 
         return $stmt->execute();
+    }
+
+    // update user profile
+    public function updateProfile($data) {
+        $this->firstname = $data['firstname'];
+        $this->lastname = $data['lastname'];
+        $this->email = $data['email'];
+
+        if ($data['pwd'] != '') {
+            $this->pwd = $data['pwd'];
+        }
+
+        $this->validate();
+
+        if (empty($this->errors)) {
+            $sql = 'UPDATE users 
+                    SET firstname = :firstname, 
+                    lastname = :lastname, 
+                    user_email = :email, 
+                    password_hash = :password_hash
+                    WHERE user_id = :id';
+
+            $database = static::getDatabaseConnection();
+
+            $stmt = $database->prepare($sql);
+
+            $stmt->bindValue(':firstname', $this->firstname, PDO::PARAM_STR);
+            $stmt->bindValue(':lastname', $this->lastname, PDO::PARAM_STR);
+            $stmt->bindValue(':email', $this->email, PDO::PARAM_STR);
+
+            $password_hash = password_hash($this->password, PASSWORD_DEFAULT);
+            $stmt->bindValue(':password_hash', $this->password_hash, PDO::PARAM_STR);
+
+            $stmt->execute();
+        }
+        return false;
     }
 }

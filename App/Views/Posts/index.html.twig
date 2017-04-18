@@ -4,25 +4,31 @@
 
 {% block body %}
 
-    {#<div class="col-md-1"></div>#}
-    {#<div class="col-md-10">#}
+<p>{{ flash_message }}</p>
+    <div class="container">
+    <div class="col-md-6"></div>
         <h1><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Postitused</h1>
+        
+        <button class="btn btn-default" onclick="location.href='/posts/add'">Lisa uus</button>
+    </div>
+    <br>
+    <div class="col-md-6"></div>
+{% for post in posts %}
 
-        {% for post in posts %}
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">{{ post.title }}</h3>
-                </div>
-                <div class="panel-body">
-                    <p>{{ post.create_date | date("d.m.Y") }}</p>
-                    <p>{{ post.content }}</p>
-                    <button type="button" class="btn btn-default">Ava</button>
-                </div>
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{ post.title }}</h3>
             </div>
+            <div class="panel-body">
+                <p>{{ post.create_date | date("d.m.Y") }}</p>
+                <p>{{ post.content }}</p>
+                <button type="button" class="btn btn-default" onclick="location.href='/posts/single/{{ post.id }}'">Ava</button>
+            </div>
+        </div>
+    </div>
 
-        {% endfor %}
 
-    {#</div>#}
-    {#<div class="col-md-1"></div>#}
+{% endfor %}
+
 {% endblock %}

@@ -19,22 +19,19 @@
         </div>
 
         {% if current_user %}
-        <ul class="nav navbar-nav">
-            <li class="navbar-button"><a href="/posts/index">Postitused</a></li>
-            <li class="navbar-button"><a href="/products/index">Tooted</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li class="navbar-button">
-                <a href="/profile/show">
-                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profiil
-                </a>
-            </li>
-            <li class="navbar-button">
-                <a href="/logout">
-                    <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logi välja
-                </a>
-            </li>
-        </ul>
+
+            <ul class="nav navbar-nav">
+                <li class="navbar-button"><a href="/admin/posts/index">Postitused</a></li>
+                <li class="navbar-button"><a href="/admin/products/index">Tooted</a></li>
+                <li class="navbar-button"><a href="/admin/users/index">Kasutajad</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="navbar-button">
+                    <a href="/logout">
+                        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logi välja
+                    </a>
+                </li>
+            </ul>
         {% endif %}
 
     </div>

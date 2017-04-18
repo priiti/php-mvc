@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block body %}
+
+    <h1>{{ post.title }}</h1>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h1 class="panel-title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{ post.owner_name }}</h1>
+                <div class="text-right"><a href="/posts/edit/{{ post.id }}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></div>
+            <h1 class="panel-title"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{ post.create_date | date("d.m.Y") }}</h1>
+        </div>
+        <div class="panel-body">
+            {{ post.content | nl2br }}
+        </div>
+    </div>
+
+    <button class="btn btn-default" onclick="location.href='/posts/index'">Tagasi</button>
+
+{% endblock %}

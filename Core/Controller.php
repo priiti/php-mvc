@@ -36,6 +36,10 @@ abstract class Controller {
 
     }
 
+//    public function __get() {
+//        $this->route_parameters;
+//    }
+
     public function redirect($url) {
         header('Location: http://' . $_SERVER['HTTP_HOST'] . $url, true, 303);
         exit;

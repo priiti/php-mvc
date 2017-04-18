@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Lisa toode{% endblock %}
+
+{% block body %}
+
+    <div class="col-md-6">
+
+        <h1><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Uue toote lisamine</h1>
+
+        <form action="/products/insert" method="post" id="formAddProducts">
+            <div class="form-group">
+                <label for="product_name">Toote nimetus:</label>
+                <input type="text" name="product_name" class="form-control" id="product_name" placeholder="Toote nimi"  />
+            </div>
+            <div class="form-group">
+                <label for="product_price">Toote hind:</label>
+                <input type="text" name="product_price" class="form-control" id="product_price" placeholder="Toote hind" />
+            </div>
+            <button type="submit" class="btn btn-success">Sisesta</button>
+        </form>
+        <br>
+        <button class="btn btn-default" onclick="location.href='/products/index'">Tagasi toodete loetellu</button>
+    </div>
+    <div class="col-md-6"></div>
+
+{% endblock %}
