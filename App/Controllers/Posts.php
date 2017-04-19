@@ -33,7 +33,12 @@ class Posts extends Authenticated {
     }
 
     public function addAction() {
-        View::renderTemplate('Posts/add.html.twig', []);
+        if (UserRights::hasRights("add_post")) {
+            View::renderTemplate('Posts/add.html.twig', []);
+        } else {
+            Flash::addMessage("Õigused puuduvad!", Flash::WARNING);
+            $this->redirect('/posts/index');
+        }
     }
 
     public function editAction() {

@@ -37,12 +37,7 @@ class Error {
             $message .= "\n";
 
             error_log($message);
-            // echo "An error occurred.";
-//            if ($code == 404) {
-//                echo "<h1>Page not found</h1>";
-//            } else {
-//                echo "<h1>An error occurred</h1>";
-//            }
+
             View::renderTemplate("$code.html.twig", []);
         }
     }

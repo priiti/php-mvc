@@ -7,11 +7,11 @@
     <h1>Kasutajate listing</h1>
     <br>
 
-    {% if current_user.is_admin %}
-        <button class="btn btn-default">Muuda kasutajate andmeid</button>
+    {#{% if current_user.is_admin %}#}
+        <button class="btn btn-default" onclick="location.href='/users/edit'">Muuda kasutajate andmeid</button>
         <br>
         <br>
-    {% endif %}
+    {#{% endif %}#}
 
     <div class="col-md-6">
     {% for user in users %}

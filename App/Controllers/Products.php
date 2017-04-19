@@ -20,9 +20,14 @@ class Products extends Authenticated {
     }
 
     public function addAction() {
-        View::renderTemplate('Products/add.html.twig', [
-            'users' => $users = User::getAll(1)
-        ]);
+        if (UserRights::hasRights("add_product")) {
+            View::renderTemplate('Products/add.html.twig', [
+                'users' => $users = User::getAll(1)
+            ]);
+        } else {
+            Flash::addMessage("Õigused puuduvad!", Flash::WARNING);
+            $this->redirect('/products/index');
+        }
     }
 
     // Inser new product action

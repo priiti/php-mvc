@@ -1,6 +1,7 @@
 {
     "require": {
-        "twig/twig": "~2.0"
+        "twig/twig": "~2.0",
+        "phpunit/phpunit": "6.1.0"
     },
     "autoload": {
         "psr-4": {
