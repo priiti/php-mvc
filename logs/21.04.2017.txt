@@ -1,0 +1,89 @@
+[21-Apr-2017 09:23:40 Europe/Berlin] 
+Uncaught exception: 'ErrorException' with message 'Array to string conversion'
+Stack trace: 
+#0 /Users/priitparl/development/PHP/HW/MVC-Project/App/Controllers/Products.php(90): Core\Error::errorHandler(8, 'Array to string...', '/Users/priitpar...', 90, Array)
+#1 [internal function]: App\Controllers\Products->deleteAction()
+#2 /Users/priitparl/development/PHP/HW/MVC-Project/Core/Controller.php(21): call_user_func_array(Array, Array)
+#3 /Users/priitparl/development/PHP/HW/MVC-Project/Core/Router.php(82): Core\Controller->__call('delete', Array)
+#4 /Users/priitparl/development/PHP/HW/MVC-Project/public/index.php(78): Core\Router->dispatch('products/delete...')
+#5 {main}
+Thrown in: '/Users/priitparl/development/PHP/HW/MVC-Project/App/Controllers/Products.php' on line 90
+
+[21-Apr-2017 09:23:51 Europe/Berlin] 
+Uncaught exception: 'ErrorException' with message 'Array to string conversion'
+Stack trace: 
+#0 /Users/priitparl/development/PHP/HW/MVC-Project/App/Controllers/Products.php(90): Core\Error::errorHandler(8, 'Array to string...', '/Users/priitpar...', 90, Array)
+#1 [internal function]: App\Controllers\Products->deleteAction()
+#2 /Users/priitparl/development/PHP/HW/MVC-Project/Core/Controller.php(21): call_user_func_array(Array, Array)
+#3 /Users/priitparl/development/PHP/HW/MVC-Project/Core/Router.php(82): Core\Controller->__call('delete', Array)
+#4 /Users/priitparl/development/PHP/HW/MVC-Project/public/index.php(78): Core\Router->dispatch('products/delete...')
+#5 {main}
+Thrown in: '/Users/priitparl/development/PHP/HW/MVC-Project/App/Controllers/Products.php' on line 90
+
+[21-Apr-2017 09:34:59 Europe/Berlin] 
+Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: 
+#0 /Users/priitparl/development/PHP/HW/MVC-Project/public/index.php(78): Core\Router->dispatch('users/edit/')
+#1 {main}
+Thrown in: '/Users/priitparl/development/PHP/HW/MVC-Project/Core/Router.php' on line 93
+
+[21-Apr-2017 09:35:25 Europe/Berlin] 
+Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: 
+#0 /Users/priitparl/development/PHP/HW/MVC-Project/public/index.php(78): Core\Router->dispatch('users/edit/')
+#1 {main}
+Thrown in: '/Users/priitparl/development/PHP/HW/MVC-Project/Core/Router.php' on line 93
+
+[21-Apr-2017 09:46:57 Europe/Berlin] 
+Uncaught exception: 'Twig_Error_Syntax' with message 'Unexpected "endblock" tag (expecting closing tag for the "if" tag defined near line 26).'
+Stack trace: 
+#0 /Users/priitparl/development/PHP/HW/MVC-Project/vendor/twig/twig/lib/Twig/TokenParser/If.php(34): Twig_Parser->subparse(Array)
+#1 /Users/priitparl/development/PHP/HW/MVC-Project/vendor/twig/twig/lib/Twig/Parser.php(166): Twig_TokenParser_If->parse(Object(Twig_Token))
+#2 /Users/priitparl/development/PHP/HW/MVC-Project/vendor/twig/twig/lib/Twig/TokenParser/Block.php(38): Twig_Parser->subparse(Array, true)
+#3 /Users/priitparl/development/PHP/HW/MVC-Project/vendor/twig/twig/lib/Twig/Parser.php(166): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#4 /Users/priitparl/development/PHP/HW/MVC-Project/vendor/twig/twig/lib/Twig/Parser.php(79): Twig_Parser->subparse(NULL, false)
+#5 /Users/priitparl/development/PHP/HW/MVC-Project/vendor/twig/twig/lib/Twig/Environment.php(512): Twig_Parser->parse(Object(Twig_TokenStream))
+#6 /Users/priitparl/development/PHP/HW/MVC-Project/vendor/twig/twig/lib/Twig/Environment.php(544): Twig_Environment->parse(Object(Twig_TokenStream))
+#7 /Users/priitparl/development/PHP/HW/MVC-Project/vendor/twig/twig/lib/Twig/Environment.php(363): Twig_Environment->compileSource(Object(Twig_Source))
+#8 /Users/priitparl/development/PHP/HW/MVC-Project/vendor/twig/twig/lib/Twig/Environment.php(288): Twig_Environment->loadTemplate('Users/edit.html...')
+#9 /Users/priitparl/development/PHP/HW/MVC-Project/Core/View.php(29): Twig_Environment->render('Users/edit.html...', Array)
+#10 /Users/priitparl/development/PHP/HW/MVC-Project/App/Controllers/Users.php(27): Core\View::renderTemplate('Users/edit.html...', Array)
+#11 [internal function]: App\Controllers\Users->editAction()
+#12 /Users/priitparl/development/PHP/HW/MVC-Project/Core/Controller.php(21): call_user_func_array(Array, Array)
+#13 /Users/priitparl/development/PHP/HW/MVC-Project/Core/Router.php(82): Core\Controller->__call('edit', Array)
+#14 /Users/priitparl/development/PHP/HW/MVC-Project/public/index.php(78): Core\Router->dispatch('users/edit/22')
+#15 {main}
+Thrown in: '/Users/priitparl/development/PHP/HW/MVC-Project/App/Views/Users/edit.html.twig' on line 41
+
+[21-Apr-2017 09:46:58 Europe/Berlin] 
+Uncaught exception: 'Twig_Error_Syntax' with message 'Unexpected "endblock" tag (expecting closing tag for the "if" tag defined near line 26).'
+Stack trace: 
+#0 /Users/priitparl/development/PHP/HW/MVC-Project/vendor/twig/twig/lib/Twig/TokenParser/If.php(34): Twig_Parser->subparse(Array)
+#1 /Users/priitparl/development/PHP/HW/MVC-Project/vendor/twig/twig/lib/Twig/Parser.php(166): Twig_TokenParser_If->parse(Object(Twig_Token))
+#2 /Users/priitparl/development/PHP/HW/MVC-Project/vendor/twig/twig/lib/Twig/TokenParser/Block.php(38): Twig_Parser->subparse(Array, true)
+#3 /Users/priitparl/development/PHP/HW/MVC-Project/vendor/twig/twig/lib/Twig/Parser.php(166): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#4 /Users/priitparl/development/PHP/HW/MVC-Project/vendor/twig/twig/lib/Twig/Parser.php(79): Twig_Parser->subparse(NULL, false)
+#5 /Users/priitparl/development/PHP/HW/MVC-Project/vendor/twig/twig/lib/Twig/Environment.php(512): Twig_Parser->parse(Object(Twig_TokenStream))
+#6 /Users/priitparl/development/PHP/HW/MVC-Project/vendor/twig/twig/lib/Twig/Environment.php(544): Twig_Environment->parse(Object(Twig_TokenStream))
+#7 /Users/priitparl/development/PHP/HW/MVC-Project/vendor/twig/twig/lib/Twig/Environment.php(363): Twig_Environment->compileSource(Object(Twig_Source))
+#8 /Users/priitparl/development/PHP/HW/MVC-Project/vendor/twig/twig/lib/Twig/Environment.php(288): Twig_Environment->loadTemplate('Users/edit.html...')
+#9 /Users/priitparl/development/PHP/HW/MVC-Project/Core/View.php(29): Twig_Environment->render('Users/edit.html...', Array)
+#10 /Users/priitparl/development/PHP/HW/MVC-Project/App/Controllers/Users.php(27): Core\View::renderTemplate('Users/edit.html...', Array)
+#11 [internal function]: App\Controllers\Users->editAction()
+#12 /Users/priitparl/development/PHP/HW/MVC-Project/Core/Controller.php(21): call_user_func_array(Array, Array)
+#13 /Users/priitparl/development/PHP/HW/MVC-Project/Core/Router.php(82): Core\Controller->__call('edit', Array)
+#14 /Users/priitparl/development/PHP/HW/MVC-Project/public/index.php(78): Core\Router->dispatch('users/edit/22')
+#15 {main}
+Thrown in: '/Users/priitparl/development/PHP/HW/MVC-Project/App/Views/Users/edit.html.twig' on line 41
+
+[21-Apr-2017 10:58:00 Europe/Berlin] 
+Uncaught exception: 'ErrorException' with message 'Undefined index: add_product'
+Stack trace: 
+#0 /Users/priitparl/development/PHP/HW/MVC-Project/App/Controllers/Users.php(37): Core\Error::errorHandler(8, 'Undefined index...', '/Users/priitpar...', 37, Array)
+#1 [internal function]: App\Controllers\Users->saveAction()
+#2 /Users/priitparl/development/PHP/HW/MVC-Project/Core/Controller.php(21): call_user_func_array(Array, Array)
+#3 /Users/priitparl/development/PHP/HW/MVC-Project/Core/Router.php(82): Core\Controller->__call('save', Array)
+#4 /Users/priitparl/development/PHP/HW/MVC-Project/public/index.php(78): Core\Router->dispatch('users/save')
+#5 {main}
+Thrown in: '/Users/priitparl/development/PHP/HW/MVC-Project/App/Controllers/Users.php' on line 37
+

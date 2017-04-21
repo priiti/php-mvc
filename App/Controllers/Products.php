@@ -30,7 +30,7 @@ class Products extends Authenticated {
         }
     }
 
-    // Inser new product action
+    // Insert new product action
     public function insertAction() {
         if (Product::validateProductData($_POST)) {
             $user = Auth::getUser();
@@ -86,6 +86,7 @@ class Products extends Authenticated {
 
     // Delete product
     public function deleteAction() {
-
+        $parameters = $this->route_parameters;
+//        print_r($parameters);
     }
 }
