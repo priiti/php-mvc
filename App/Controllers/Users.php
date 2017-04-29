@@ -34,10 +34,6 @@ class Users extends Authenticated {
     public function saveAction() {
         if (UserRights::hasRights("is_admin")) {
 
-//            if ($_POST['add_product']) {
-//
-//            }
-
             $user = new User($_POST);
 
 
